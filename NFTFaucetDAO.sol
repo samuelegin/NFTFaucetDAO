@@ -3,7 +3,8 @@ pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-contract NFTFaucetDAO is Ownable, ERC721{
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
+contract NFTFaucetDAO is Ownable, ERC721, ERC721Enumerable{
     uint256 public maxsupply = 1000;
     uint256 public totalClaimed;
     uint256 public constant cooldown = 24;

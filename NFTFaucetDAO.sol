@@ -10,7 +10,6 @@ contract NFTFaucetDAO is Ownable, ERC721, ERC721Enumerable{
     uint256 public constant coolDown = 24 hours;
     uint256 public id;
     
-    mapping(address => uint256) public balances;
     mapping(address => uint256) public lastClaimed;
     event Dripped(address indexed to, uint256 indexed id);
 

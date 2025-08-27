@@ -1,11 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
-
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-contract NFTFaucetDAO is Ownable, ERC721, ERC721Enumerable, ReentrancyGuard {
+contract NFTFaucetDAO is Ownable,ERC721Enumerable, ReentrancyGuard {
     uint256 public maxSupply = 1000;
     uint256 public totalClaimed;
     uint256 public constant coolDown = 24 hours;
@@ -25,5 +23,14 @@ contract NFTFaucetDAO is Ownable, ERC721, ERC721Enumerable, ReentrancyGuard {
         lastClaimed[msg.sender] = block.timestamp;
         emit Dripped(msg.sender, id);
         return true;
+    }
+
+    function setMaxSupply(uint256 _maxSupply) external onlyOwner {
+        require(_maxSupply >= totalClaimed, "Cannot set max supply below total claimed");
+        maxSupply = _maxSupply;
+    }
+
+    function totalSupply() public override view returns (uint256) {
+        return totalClaimed;
     }
 }

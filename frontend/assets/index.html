@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFTFaucetDAO</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main>
+    <div class="landing">
+      <h1>NFTFaucetDAO</h1>
+      <p>Claim your daily NFT drop and participate in community governance. One NFT per wallet every 24 hours.</p>
+      <div class="hero-btns">
+        <button class="claim-btn">
+          <a href="#ClaimNFTHeader">Start Claiming</a>
+        </button>
+        <button class="gov-btn">View Governance</button>
+      </div>
+      <div class="nft-status">
+        <div class="info-div">
+          <div class="claimed-nfts-no">730</div>
+          <div class="text">NFT's Claimed</div>
+        </div>
+        <div class="info-div">
+          <div class="active-wallets-no">2,000</div>
+          <div class="text">Active Wallets</div>
+        </div>
+        <div class="info-div">
+          <div class="proposals-voted">123</div>
+          <div class="text">Proposals Voted</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NFT Claim Section -->
+    <div class="nft-claim-cont">
+      <div class="nft-claim-header">
+        <h1 id="ClaimNFTHeader">Claim Your NFT</h1>
+        <p>Get your daily NFT drop - one per wallet every 24 hours</p>
+      </div>
+      <form>
+        <div class="daily-header-cont">
+          <h3>Daily NFT Drop</h3>
+          <div class="claim-countdown">23:59:59</div>
+        </div>
+        <p>Connect your wallet and claim your unique NFT. Each wallet can claim once every 24 hours.</p>
+        <h3>Wallet Address</h3>
+        <input type="text" placeholder="0x...">
+        <h3>Next NFT Preview</h3>
+        <div class="nft-preview-cont">
+          <img src="" alt="">
+        </div>
+        <h5>Generative Art Collection <span class="nft-number">#343</span></h5>
+        <button class="cooldown">Cooldown <span class="cooldown-counter">23:59:59</span></button>
+        <h6>⏰ You've already claimed today. Come back tomorrow!</h6>
+      </form>
+    </div>
+
+    <!-- Governance Section -->
+    <div class="community-governance">
+      <div class="governance-header">
+        <h1>Community Governance</h1>
+        <p>Participate in active governance community proposals and voting</p>
+      </div>
+      <div class="proposal-tab">
+        <div class="tab active" data-target="active">Active Proposals</div>
+        <div class="tab" data-target="create">Create Proposal</div>
+      </div>
+
+      <!-- Active Proposals (default visible) -->
+      <div class="active-proposals-cont tab-content" id="active">
+        <div class="active-proposal-card">
+          <div class="active-header">
+            <div class="active-proposal-header">Increase Daily NFT Limit</div>
+            <div class="active-proposal-cont">Active</div>
+          </div>
+          <div class="proposal">Add cyberpunk-themed NFTs to the rotation</div>
+          <p> Created by <span class="proposal-creator">0x1234...5678 </span> • 
+            <span class="proposal-days-remaining">5</span> days remaining</p>
+          <div class="vote-cont">
+            <div class="vote-count-cont">
+              <span class="for"><label>For:</label>1030</span>
+              <span class="against"><label>Against:</label>234</span>
+            </div>
+            <div class="bar-cont">
+              <div class="for-bar"></div>
+              <div class="against-bar"></div>
+            </div>
+            <div class="total-votes">1264 <label>Total Votes</label></div>
+          </div>
+          <div class="vote-btns">
+            <button class="vote-for">Vote For</button>
+            <button class="vote-against">Vote Against</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Create Proposal (hidden by default) -->
+      <div class="create-proposal tab-content" id="create" hidden>
+        <div class="proposal-cont">
+          <h1>Create New Proposal</h1>
+          <p>Submit a proposal for the community to vote on. Requires holding at least 1 NFT.</p>
+          <form class="form2">
+            <h4>Proposal Title</h4>
+            <input type="text" placeholder="Brief descriptive title">
+            <h4>Proposal Details</h4>
+            <textarea cols="30" rows="10" placeholder="Detailed explanation of your proposal"></textarea>
+            <h4>Requirements</h4>
+            <div class="requirements">
+              Must hold at least 1 NFT from this collection
+              <br>Proposals will be active for 7 days
+            </div>
+            <button class="submit-proposal">Submit Proposal</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabs = document.querySelectorAll(".proposal-tab .tab");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          tabs.forEach(t => t.classList.remove("active"));
+          contents.forEach(c => c.hidden = true);
+
+          tab.classList.add("active");
+          const targetId = tab.getAttribute("data-target");
+          document.getElementById(targetId).hidden = false;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

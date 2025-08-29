@@ -1,0 +1,310 @@
+:root {
+  --primary-gradient: linear-gradient(to right, #8f44fd, #5befff);
+  --bg-dark: #0f0f1f;
+  --bg-mid: #1f1e1e;
+  --text-light: #fafafa;
+  --text-muted: #bababa;
+  --accent: #8f44fd;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/* Landing Section */
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1a1a2e, var(--bg-dark));
+  color: var(--text-light);
+  gap: 1.5rem;
+}
+.landing h1 {
+  font-size: 4rem;
+  background: linear-gradient(90deg, #5b5bff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.landing p {
+  max-width: 600px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+}
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.claim-btn {
+  background: linear-gradient(to right, #5b5bff, var(--accent));
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 0.5rem;
+  & a{
+    text-decoration: none;
+    color: white;
+  }
+}
+.gov-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 0.5rem;
+}
+.nft-status {
+  display: flex;
+  gap: 5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+.info-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.claimed-nfts-no,
+.proposals-voted {
+  font-size: 1.7rem;
+  background: linear-gradient(90deg, #5befff, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.active-wallets-no {
+  font-size: 1.7rem;
+  color: var(--accent);
+}
+.text {
+  color: var(--text-muted);
+}
+
+/* NFT Claim */
+.nft-claim-cont {
+  background-color: black;
+  color: var(--text-light);
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+.nft-claim-header h1 {
+  font-size: 2.8rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nft-claim-header p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  color: var(--text-muted);
+}
+form {
+  margin: 2rem auto;
+  width: 40%;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  background-color: rgb(18, 17, 17);
+}
+input[type=text] {
+  width: 100%;
+  padding: 0.8rem 0.5rem;
+  border-radius: 0.7rem;
+  border: none;
+  outline-color: var(--accent);
+  background-color: black;
+  color: var(--text-light);
+}
+.nft-preview-cont {
+  height: 35rem;
+  background: linear-gradient(to right, #5b5bff, var(--accent));
+  border-radius: 0.7rem;
+  margin-top: 1rem;
+}
+.cooldown {
+  width: 100%;
+  padding: 0.8rem 0.5rem;
+  border-radius: 0.7rem;
+  margin-top: 2rem;
+  color: white;
+  border: none;
+  background-color: #292626;
+  margin-bottom: 1rem;
+}
+
+/* Governance */
+.community-governance {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 4rem 0 2rem;
+}
+.governance-header h1 {
+  font-size: 2.8rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.governance-header p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  color: var(--text-muted);
+}
+.proposal-tab {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 20em;
+  margin: 2.5rem auto;
+  background-color: var(--bg-mid);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.7rem;
+}
+.tab {
+  cursor: pointer;
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+.tab.active {
+  background-color: black;
+}
+.tab-content[hidden] {
+  display: none !important;
+}
+
+/* Active proposals */
+.active-proposal-card {
+  background-color: var(--bg-mid);
+  margin: 2rem auto;
+  width: 70%;
+  border-radius: 0.7rem;
+  text-align: left;
+  padding-bottom: 1rem;
+}
+.active-proposal-card p{
+    margin: 0 2rem;
+    font-size: small;
+}
+.active-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.active-proposal-header {
+  font-size: 1.3rem;
+}
+.active-proposal-cont {
+  background-color: #5befff;
+  padding: 0.3rem 0.8rem;
+  color: black;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+}
+.proposal {
+  margin-left: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.vote-cont {
+  padding: 0 2rem;
+  margin-top: 2rem;
+}
+.vote-count-cont {
+  display: flex;
+  justify-content: space-between;
+}
+.bar-cont {
+  width: 100%;
+  height: 0.81rem;
+  background: #ddd;
+  border-radius: 0.7rem;
+  margin-top: 0.5rem;
+  position: relative;
+}
+.for-bar {
+  background: var(--accent);
+  width: 50%;
+  height: 100%;
+  border-top-left-radius: 0.7rem;
+  border-bottom-left-radius: 0.7rem;
+}
+.against-bar {
+  background: #292626;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top-right-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
+}
+.vote-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 2rem;
+}
+.vote-btns button {
+  flex: 1;
+  padding: 0.4rem;
+  border-radius: 0.7rem;
+  border: none;
+}
+.vote-for {
+  background: var(--primary-gradient);
+  color: white;
+}
+.vote-against {
+  background-color: black;
+  color: var(--text-muted);
+}
+
+/* Create Proposal */
+.proposal-cont {
+  background-color: var(--bg-mid);
+  width: 70%;
+  margin: 2rem auto;
+  border-radius: 0.7rem;
+  padding: 1.5rem 2rem;
+  text-align: left;
+}
+.form2{
+    width: 100%;
+    & h4{
+        text-align: left;
+        margin-top: 1rem;
+    }
+}
+textarea{
+    border-radius: 0.7rem;
+    border: none;
+    outline-color: #8f44fd;
+    background-color: black;
+    color: #fafafa;
+    width: 100%;
+    padding: 1rem 0.5rem;
+}
+.requirements{
+    font-size: 0.87rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.submit-proposal{
+    background: linear-gradient(to right, #8f44fd, #5befff);
+    color: white;
+    width: 100%;
+    border-radius: 0.7rem;
+    border: none;
+    padding: 0.4rem;
+    margin-top: 1rem;
+}
+
